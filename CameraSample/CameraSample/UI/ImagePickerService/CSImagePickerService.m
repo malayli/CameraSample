@@ -33,14 +33,19 @@
         
         // Image Picker Controller
         
-        self.imagePickerController = [[UIImagePickerController alloc] init];
-        self.imagePickerController.delegate = self;
-        self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-        self.imagePickerController.showsCameraControls = NO;
-        self.imagePickerController.navigationBarHidden = NO;
-        self.imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
-        self.imagePickerController.cameraOverlayView = self.photoViewController.view;
-        self.imagePickerController.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
+        _imagePickerController = [[UIImagePickerController alloc] init];
+        _imagePickerController.delegate = self;
+        _imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        _imagePickerController.showsCameraControls = NO;
+        _imagePickerController.navigationBarHidden = NO;
+        _imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        _imagePickerController.cameraOverlayView = _photoViewController.view;
+        _imagePickerController.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
+        
+        // Set Titles
+        
+        [_photoViewController setToggleFlashTitle:NSLocalizedString(@"flash_off", nil)];
+        [_photoViewController setFlipCameraTitle:NSLocalizedString(@"flip_to_front", nil)];
 
     }
     return self;
@@ -81,10 +86,12 @@
     switch (self.imagePickerController.cameraDevice) {
         case UIImagePickerControllerCameraDeviceRear:
             self.imagePickerController.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+            [self.photoViewController setFlipCameraTitle:NSLocalizedString(@"flip_to_rear", nil)];
             break;
             
         case UIImagePickerControllerCameraDeviceFront:
             self.imagePickerController.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+            [self.photoViewController setFlipCameraTitle:NSLocalizedString(@"flip_to_front", nil)];
             break;
             
         default:
@@ -96,17 +103,17 @@
     switch (self.imagePickerController.cameraFlashMode) {
         case UIImagePickerControllerCameraFlashModeOff:
             self.imagePickerController.cameraFlashMode = UIImagePickerControllerCameraFlashModeOn;
-            [self.photoViewController setToggleTitle:@"Flash On"];
+            [self.photoViewController setToggleFlashTitle:NSLocalizedString(@"flash_on", nil)];
             break;
             
         case UIImagePickerControllerCameraFlashModeOn:
             self.imagePickerController.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
-            [self.photoViewController setToggleTitle:@"Flash Auto"];
+            [self.photoViewController setToggleFlashTitle:NSLocalizedString(@"flash_auto", nil)];
             break;
             
         case UIImagePickerControllerCameraFlashModeAuto:
             self.imagePickerController.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
-            [self.photoViewController setToggleTitle:@"Flash Off"];
+            [self.photoViewController setToggleFlashTitle:NSLocalizedString(@"flash_off", nil)];
             break;
             
         default:

@@ -12,7 +12,9 @@
 
 @interface CSPhotoViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *capturePhotoButton;
 @property (weak, nonatomic) IBOutlet UIButton *toggleFlashButton;
+@property (weak, nonatomic) IBOutlet UIButton *flipCameraButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *upViewHeightContraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *downViewHeightContraint;
 
@@ -31,10 +33,14 @@
     self.downViewHeightContraint.constant = theConstant;
 }
 
-#pragma mark - UIViewController Method
+#pragma mark - UIViewController Methods
 
-- (void)setToggleTitle:(NSString *)aTitle {
+- (void)setToggleFlashTitle:(NSString *)aTitle {
     [self.toggleFlashButton setTitle:aTitle forState:UIControlStateNormal];
+}
+
+- (void)setFlipCameraTitle:(NSString *)aTitle {
+    [self.flipCameraButton setTitle:aTitle forState:UIControlStateNormal];
 }
 
 #pragma mark - IBAction Method

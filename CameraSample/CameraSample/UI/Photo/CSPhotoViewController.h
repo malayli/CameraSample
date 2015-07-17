@@ -14,6 +14,8 @@ static NSString * const CSPhotoViewControllerStoryboardID = @"CSPhotoViewControl
 
 // UIViewController Method
 
-- (void)setToggleTitle:(NSString *)aTitle;
+- (void)setToggleFlashTitle:(NSString *)aTitle;
+
+- (void)setFlipCameraTitle:(NSString *)aTitle;
 
 @end

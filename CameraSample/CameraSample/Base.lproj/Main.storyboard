@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sVz-dn-5xA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sVz-dn-5xA">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -72,22 +73,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNe-9n-kQ5" userLabel="Up View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                <rect key="frame" x="-4" y="0.0" width="608" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="4MV-iP-VUp"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0c-md-4xZ" userLabel="Down View">
-                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
+                                <rect key="frame" x="-4" y="520" width="608" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="QHB-kq-Tan"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eX6-ks-iYS" userLabel="Capture Photo Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eX6-ks-iYS" userLabel="Capture Photo Button" customClass="CSPhotoButton">
                                 <rect key="frame" x="270" y="530" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ldr-mh-BLz"/>
                                     <constraint firstAttribute="width" constant="60" id="xK4-Ga-AnO"/>
@@ -104,10 +105,10 @@
                                     <action selector="capturePhoto:" destination="5lk-X8-BgS" eventType="touchUpInside" id="nOn-Wn-gxw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHI-oC-vHP">
-                                <rect key="frame" x="524" y="530" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHI-oC-vHP" userLabel="Flip Camera Button">
+                                <rect key="frame" x="484" y="530" width="100" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="3dp-BZ-ZGb"/>
+                                    <constraint firstAttribute="width" constant="100" id="3dp-BZ-ZGb"/>
                                     <constraint firstAttribute="height" constant="60" id="dqU-xb-g9B"/>
                                 </constraints>
                                 <state key="normal" title="Flip">
@@ -117,7 +118,7 @@
                                     <action selector="flipCameraView:" destination="5lk-X8-BgS" eventType="touchUpInside" id="X6U-bG-JdJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yj1-hQ-m5T">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yj1-hQ-m5T" userLabel="Toggle Flash Button">
                                 <rect key="frame" x="16" y="530" width="100" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="9nx-BV-Iaa"/>
@@ -134,21 +135,23 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oNe-9n-kQ5" firstAttribute="top" secondItem="fk2-em-Pcr" secondAttribute="bottom" constant="-20" id="8VB-3r-XTk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oNe-9n-kQ5" secondAttribute="trailing" constant="-16" id="BxJ-LM-5aN"/>
                             <constraint firstItem="6e6-KJ-1Ij" firstAttribute="top" secondItem="eX6-ks-iYS" secondAttribute="bottom" constant="10" id="Cej-zU-vqC"/>
                             <constraint firstItem="6e6-KJ-1Ij" firstAttribute="top" secondItem="NHI-oC-vHP" secondAttribute="bottom" constant="10" id="ODg-ue-bFm"/>
-                            <constraint firstItem="I0c-md-4xZ" firstAttribute="leading" secondItem="uyO-jh-XJ0" secondAttribute="leadingMargin" constant="-16" id="P3u-pb-XOW"/>
-                            <constraint firstItem="oNe-9n-kQ5" firstAttribute="leading" secondItem="uyO-jh-XJ0" secondAttribute="leadingMargin" constant="-16" id="Q6l-or-pZz"/>
+                            <constraint firstItem="I0c-md-4xZ" firstAttribute="leading" secondItem="uyO-jh-XJ0" secondAttribute="leadingMargin" constant="-20" id="P3u-pb-XOW"/>
+                            <constraint firstItem="oNe-9n-kQ5" firstAttribute="leading" secondItem="uyO-jh-XJ0" secondAttribute="leadingMargin" constant="-20" id="ZSg-Ee-HeD"/>
                             <constraint firstItem="yj1-hQ-m5T" firstAttribute="leading" secondItem="uyO-jh-XJ0" secondAttribute="leadingMargin" id="ZYI-hH-KAn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="I0c-md-4xZ" secondAttribute="trailing" constant="-16" id="jvX-bA-hjk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I0c-md-4xZ" secondAttribute="trailing" constant="-20" id="jvX-bA-hjk"/>
                             <constraint firstItem="6e6-KJ-1Ij" firstAttribute="top" secondItem="yj1-hQ-m5T" secondAttribute="bottom" constant="10" id="plG-fd-gAb"/>
                             <constraint firstItem="6e6-KJ-1Ij" firstAttribute="top" secondItem="I0c-md-4xZ" secondAttribute="bottom" id="psg-M9-7zp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oNe-9n-kQ5" secondAttribute="trailing" constant="-20" id="sFf-e6-DPj"/>
                             <constraint firstItem="NHI-oC-vHP" firstAttribute="trailing" secondItem="uyO-jh-XJ0" secondAttribute="trailingMargin" id="sZZ-63-aVw"/>
                             <constraint firstAttribute="centerX" secondItem="eX6-ks-iYS" secondAttribute="centerX" id="xKF-qM-dZ8"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="capturePhotoButton" destination="eX6-ks-iYS" id="N8n-Oj-dk2"/>
                         <outlet property="downViewHeightContraint" destination="QHB-kq-Tan" id="1i1-66-Dd5"/>
+                        <outlet property="flipCameraButton" destination="NHI-oC-vHP" id="dhU-DY-2Vq"/>
                         <outlet property="toggleFlashButton" destination="yj1-hQ-m5T" id="Liq-yb-Mgn"/>
                         <outlet property="upViewHeightContraint" destination="4MV-iP-VUp" id="T7G-i0-6o6"/>
                     </connections>

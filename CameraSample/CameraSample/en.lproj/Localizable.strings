@@ -8,3 +8,8 @@
 
 camera_error = "The camera can't be open";
 cancel = "Cancel";
+flash_on = "Flah On";
+flash_auto = "Flah Auto";
+flash_off = "Flah Off";
+flip_to_rear = "Flip to Rear";
+flip_to_front = "Flip to Front";
